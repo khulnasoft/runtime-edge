@@ -1,0 +1,38 @@
+---
+title: Command-line Interface
+description: Learn how to install and run the Edge Runtime as a CLI.
+---
+
+# Using the CLI
+
+## Installation
+
+The **Edge Runtime** can be also consumed from your terminal when you install it globally in your system:
+
+```sh npm2yarn
+npm -g install runtime-edge
+```
+
+## Usage
+
+The CLI provides you different ways to evaluate an script with [Edge Runtime APIs](/features/available-apis) constraints.
+
+You can just start an interactive session with `--repl`:
+
+```bash
+runtime-edge --repl
+```
+
+Evaluate an inline script with `--eval`:
+
+```bash
+runtime-edge --eval "Object.getOwnPropertyNames(this)"
+```
+
+Run a local HTTP server:
+
+```bash
+runtime-edge --listen examples/fetch.js
+```
+
+and more. In any case, you can see all this information typing `runtime-edge --help`.
