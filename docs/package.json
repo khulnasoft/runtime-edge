@@ -2,7 +2,7 @@
   "name": "@runtime-edge/docs",
   "version": "0.0.0",
   "dependencies": {
-    "@heroicons/react": "~2.1.1",
+    "@heroicons/react": "~2.0.18",
     "next": "~14.1.0",
     "next-themes": "~0.2.1",
     "nextra": "~2.13.2",
