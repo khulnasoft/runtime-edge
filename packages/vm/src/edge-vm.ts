@@ -1,5 +1,5 @@
-import type * as EdgePrimitives from '@edge-runtime/primitives'
-import { load as loadPrimitives } from '@edge-runtime/primitives/load'
+import type * as EdgePrimitives from '@runtime-edge/primitives'
+import { load as loadPrimitives } from '@runtime-edge/primitives/load'
 import type { DispatchFetch, ErrorHandler, RejectionHandler } from './types'
 import { Context, runInContext } from 'vm'
 import { VM, type VMContext, type VMOptions } from './vm'
@@ -16,7 +16,7 @@ export interface EdgeVMOptions<T extends EdgeContext> {
    */
   extend?: (context: EdgeContext) => EdgeContext & T
   /**
-   * Code to be evaluated as when the Edge Runtime is created. This is handy
+   * Code to be evaluated as when the Runtime Edge is created. This is handy
    * to run code directly instead of first creating the runtime and then
    * evaluating.
    */
@@ -308,7 +308,7 @@ export type EdgeContext = VMContext & {
   URLSearchParams: typeof EdgePrimitives.URLSearchParams
   WritableStream: typeof EdgePrimitives.WritableStream
   WritableStreamDefaultWriter: typeof EdgePrimitives.WritableStreamDefaultWriter
-  EdgeRuntime: string
+  RuntimeEdge: string
 }
 
 function addPrimitives(context: VMContext) {
@@ -318,7 +318,7 @@ function addPrimitives(context: VMContext) {
   defineProperty(context, 'clearInterval', { value: clearInterval })
   defineProperty(context, 'clearTimeout', { value: clearTimeout })
   defineProperty(context, 'queueMicrotask', { value: queueMicrotask })
-  defineProperty(context, 'EdgeRuntime', { value: 'runtime-edge' })
+  defineProperty(context, 'RuntimeEdge', { value: 'runtime-edge' })
 
   const transferables = getTransferablePrimitivesFromContext(context)
 
