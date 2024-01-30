@@ -1,11 +1,11 @@
-import { createFormat } from '@edge-runtime/format'
+import { createFormat } from '@runtime-edge/format'
 import type { Logger, LoggerOptions } from '../types'
 import type { Formatter } from 'picocolors/types'
 import pico from 'picocolors'
 
 const isEnabled =
-  process.env.EDGE_RUNTIME_LOGGING !== undefined
-    ? Boolean(process.env.EDGE_RUNTIME_LOGGING)
+  process.env.RUNTIME_EDGE_LOGGING !== undefined
+    ? Boolean(process.env.RUNTIME_EDGE_LOGGING)
     : true
 
 export const format = createFormat()

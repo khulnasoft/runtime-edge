@@ -1,6 +1,6 @@
 import { Callout } from 'nextra-theme-docs'
 
-# Edge Runtime Node Utils
+# Runtime Edge Node Utils
 
 The **@runtime-edge/node-utils** package contains utilities to run web compliant code into a Node.js environment.
 
@@ -77,11 +77,11 @@ buildToNodeHandler(globals, {
 })
 ```
 
-Otherwise, you can reuse primitives from [@edge-runtime/primitives](/packages/primitives)
+Otherwise, you can reuse primitives from [@runtime-edge/primitives](/packages/primitives)
 
 ```js
 import { buildToNodeHandler } from '@runtime-edge/node-utils'
-import * as primitives from '@edge-runtime/primitives'
+import * as primitives from '@runtime-edge/primitives'
 
 buildToNodeHandler(primitives, {
   /* ... options */

@@ -1,4 +1,4 @@
-# @edge-runtime/primitives
+# @runtime-edge/primitives
 
 ## 4.0.5
 
@@ -100,7 +100,7 @@
 
 - expose `primitives/load` ([#336](https://github.com/khulnasoft/runtime-edge/pull/336))
 
-- Extract a `@edge-runtime/primitives/load` entrypoint that loads the primitives given a scoped global context ([#327](https://github.com/khulnasoft/runtime-edge/pull/327))
+- Extract a `@runtime-edge/primitives/load` entrypoint that loads the primitives given a scoped global context ([#327](https://github.com/khulnasoft/runtime-edge/pull/327))
 
 - Fix `@/primitives/load` types by externalizing `@/primitives/index` in the type definition ([#338](https://github.com/khulnasoft/runtime-edge/pull/338))
 
@@ -186,7 +186,7 @@
 
 ### Patch Changes
 
-- Extract a `@edge-runtime/primitives/load` entrypoint that loads the primitives given a scoped global context ([#327](https://github.com/khulnasoft/runtime-edge/pull/327))
+- Extract a `@runtime-edge/primitives/load` entrypoint that loads the primitives given a scoped global context ([#327](https://github.com/khulnasoft/runtime-edge/pull/327))
 
 ## 2.2.0-beta.2
 
@@ -276,7 +276,7 @@
 
 - build(deps-dev): bump undici from 5.10.0 to 5.11.0 ([#156](https://github.com/khulnasoft/runtime-edge/pull/156))
 
-- Mark the createCaches export as nullable as it does not exist in Edge Runtime ([#124](https://github.com/khulnasoft/runtime-edge/pull/124))
+- Mark the createCaches export as nullable as it does not exist in Runtime Edge ([#124](https://github.com/khulnasoft/runtime-edge/pull/124))
 
 ## 1.1.0-beta.37
 
@@ -308,7 +308,7 @@
 
 - Allow to use URLPattern as a type with @runtime-edge/ponyfill ([#113](https://github.com/khulnasoft/runtime-edge/pull/113))
 
-* Mark the createCaches export as nullable as it does not exist in Edge Runtime ([#124](https://github.com/khulnasoft/runtime-edge/pull/124))
+* Mark the createCaches export as nullable as it does not exist in Runtime Edge ([#124](https://github.com/khulnasoft/runtime-edge/pull/124))
 
 ## 1.1.0-beta.32
 

@@ -4,8 +4,8 @@
   <img src="https://user-images.githubusercontent.com/2096101/235127419-ac6fe609-d0cd-4339-a593-c48305a83823.png#gh-light-mode-only">
   <br>
   <br>
-  <p align="center"><strong>@runtime-edge/jest-environment</strong>: A Jest integration to run assertions in Edge Runtime context.</p>
-  <p align="center">See <a href="https://edge-runtime.vercel.app/packages/jest-environment" target='_blank' rel='noopener noreferrer'>@runtime-edge/jest-environment</a> section in our <a href="https://edge-runtime.vercel.app/" target='_blank' rel='noopener noreferrer'>website</a> for more information.</p>
+  <p align="center"><strong>@runtime-edge/jest-environment</strong>: A Jest integration to run assertions in Runtime Edge context.</p>
+  <p align="center">See <a href="https://runtime-edge.vercel.app/packages/jest-environment" target='_blank' rel='noopener noreferrer'>@runtime-edge/jest-environment</a> section in our <a href="https://runtime-edge.vercel.app/" target='_blank' rel='noopener noreferrer'>website</a> for more information.</p>
   <br>
 </div>
 
@@ -31,7 +31,7 @@ pnpm install @runtime-edge/jest-environment --save
 
 ## License
 
-**@edge-runtime/vm** © [Vercel](https://vercel.com), released under the [MPLv2](https://github.com/khulnasoft/runtime-edge/blob/main/LICENSE.md) License.<br>
-Authored and maintained by [Vercel](https://vercel.com) with help from [contributors](https://github.com/khulnasoft/runtime-edge/contributors).
+**@runtime-edge/vm** © [Khulnasoft](https://khulnasoft.com), released under the [MPLv2](https://github.com/khulnasoft/runtime-edge/blob/main/LICENSE.md) License.<br>
+Authored and maintained by [Khulnasoft](https://khulnasoft.com) with help from [contributors](https://github.com/khulnasoft/runtime-edge/contributors).
 
-> [vercel.com](https://vercel.com) · GitHub [Vercel](https://github.com/vercel) · Twitter [@vercel](https://twitter.com/vercel)
+> [khulnasoft.com](https://khulnasoft.com) · GitHub [Khulnasoft](https://github.com/vercel) · Twitter [@vercel](https://twitter.com/vercel)

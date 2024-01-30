@@ -1,6 +1,6 @@
-# Edge Runtime
+# Runtime Edge
 
-The **edge-runtime** package is a high-level, ready to use, general purpose way to run [Vercel Edge Functions](https://vercel.com/edge).
+The **runtime-edge** package is a high-level, ready to use, general purpose way to run [Khulnasoft Edge Functions](https://khulnasoft.com/edge).
 
 It runs under the same condition than production environment, but locally in your machine.
 
@@ -9,7 +9,7 @@ Under the hood, this package is orchestrating the use of the rest of the package
 ## Installation
 
 ```sh npm2yarn
-npm install edge-runtime
+npm install runtime-edge
 ```
 
 This package includes built-in TypeScript support.
@@ -18,10 +18,10 @@ This package includes built-in TypeScript support.
 
 ### as module
 
-The **edge-runtime** package is on top of [@edge-runtime/vm](/packages/vm), extending it with [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) API support for handling fetch events.
+The **runtime-edge** package is on top of [@runtime-edge/vm](/packages/vm), extending it with [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) API support for handling fetch events.
 
 ```js
-import { EdgeRuntime } from 'runtime-edge'
+import { RuntimeEdge } from 'runtime-edge'
 
 const initialCode = `
 addEventListener('fetch', event => {
@@ -30,10 +30,10 @@ addEventListener('fetch', event => {
   return event.respondWith(fetch(url))
 })`
 
-const runtime = new EdgeRuntime({ initialCode })
+const runtime = new RuntimeEdge({ initialCode })
 
 const response = await runtime.dispatchFetch(
-  'http://vercel.com?url=https://example.vercel.sh',
+  'http://khulnasoft.com?url=https://example.vercel.sh',
 )
 
 // If your code logic performs asynchronous tasks, you should await them.
@@ -46,12 +46,12 @@ console.log(response.status)
 
 ### as HTTP server
 
-You can use `runServer` to expose _any_ Edge Runtime instance as regular HTTP server:
+You can use `runServer` to expose _any_ Runtime Edge instance as regular HTTP server:
 
 ```js
-import { runServer, EdgeRuntime } from 'runtime-edge'
+import { runServer, RuntimeEdge } from 'runtime-edge'
 
-const runtime = new EdgeRuntime()
+const runtime = new RuntimeEdge()
 const server = await runServer({ runtime })
 
 console.log(`Listening at ${server.url}`)
@@ -59,13 +59,13 @@ console.log(`Listening at ${server.url}`)
 
 ## API
 
-### new EdgeRuntime([options])
+### new RuntimeEdge([options])
 
-It creates a new Edge Runtime instance.
+It creates a new Runtime Edge instance.
 
 #### options
 
-Any option provided will be passed against **@edge-runtime/vm**.
+Any option provided will be passed against **@runtime-edge/vm**.
 
 Additionally, you can provide:
 
@@ -75,9 +75,9 @@ Some initial code to be evaluated as the VM for the runtime is created.
 
 #### methods
 
-It inherits from **@edge-runtime/vm**, plus:
+It inherits from **@runtime-edge/vm**, plus:
 
-##### VercelRuntime: string
+##### KhulnasoftRuntime: string
 
 Returns the runtime version.
 
@@ -115,9 +115,9 @@ Creates a Node.js HTTP handler.
 
 #### options
 
-##### runtime: EdgeRuntime
+##### runtime: RuntimeEdge
 
-The Edge Runtime instance to be used that should be previously declared.
+The Runtime Edge instance to be used that should be previously declared.
 
 ##### logger?: Logger
 
