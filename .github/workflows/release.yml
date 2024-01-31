@@ -40,7 +40,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            khulnasoft-lab/runtime-edge
+            khulnasoft/runtime-edge
           tags: |
             type=raw,value=v${{ needs.release.outputs.version }}_${{ env.arch }}
 
@@ -78,7 +78,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            khulnasoft-lab/runtime-edge
+            khulnasoft/runtime-edge
           tags: |
             type=raw,value=v${{ needs.release.outputs.version }}_${{ env.arch }}
 
@@ -121,9 +121,9 @@ jobs:
 
       - name: Merge multi-arch manifests
         run: |
-          docker buildx imagetools create -t khulnasoft-lab/runtime-edge:v${{ needs.release.outputs.version }} \
-          khulnasoft-lab/runtime-edge@${{ needs.publish_x86.outputs.image_digest }} \
-          khulnasoft-lab/runtime-edge@${{ needs.publish_arm.outputs.image_digest }}
+          docker buildx imagetools create -t khulnasoft/runtime-edge:v${{ needs.release.outputs.version }} \
+          khulnasoft/runtime-edge@${{ needs.publish_x86.outputs.image_digest }} \
+          khulnasoft/runtime-edge@${{ needs.publish_arm.outputs.image_digest }}
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -145,7 +145,7 @@ jobs:
       - name: Mirror to ECR
         uses: akhilerm/tag-push-action@v2.0.0
         with:
-          src: docker.io/khulnasoft-lab/runtime-edge:v${{ needs.release.outputs.version }}
+          src: docker.io/khulnasoft/runtime-edge:v${{ needs.release.outputs.version }}
           dst: |
-            public.ecr.aws/khulnasoft-lab/runtime-edge:v${{ needs.release.outputs.version }}
-            ghcr.io/khulnasoft-lab/runtime-edge:v${{ needs.release.outputs.version }}
+            public.ecr.aws/khulnasoft/runtime-edge:v${{ needs.release.outputs.version }}
+            ghcr.io/khulnasoft/runtime-edge:v${{ needs.release.outputs.version }}

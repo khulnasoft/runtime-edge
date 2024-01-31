@@ -1,0 +1,19 @@
+[package]
+name = "event_worker"
+version = "0.1.0"
+authors = ["Khulnasoft <team@khulnasoft.com>"]
+edition = "2021"
+resolver = "2"
+description = "We'll take care of this later"
+license = "MIT"
+
+[lib]
+path = "lib.rs"
+
+[dependencies]
+deno_core.workspace = true
+uuid.workspace = true
+serde.workspace = true
+anyhow.workspace = true
+tokio.workspace = true
+log.workspace = true
