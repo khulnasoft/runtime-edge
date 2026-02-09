@@ -29,7 +29,7 @@ const theme = {
     'https://github.com/khulnasoft/runtime-edge/blob/main/docs',
   useNextSeoProps() {
     return {
-      titleTemplate: '%s | Runtime Edge',
+      titleTemplate: '%s | Edge Runtime',
     }
   },
   logo: function Logo() {
@@ -39,9 +39,9 @@ const theme = {
         <img
           width='24'
           src={`/logo${isDark ? '-dark' : ''}.svg`}
-          alt='Runtime Edge logo'
+          alt='Edge Runtime logo'
         />
-        <span className='w-full font-bold pl-2'>Runtime Edge</span>
+        <span className='w-full font-bold pl-2'>Edge Runtime</span>
       </>
     )
   },
@@ -71,7 +71,7 @@ const theme = {
             frontMatter.ogImage ?? '/og-image.png'
           }`}
         />
-        <meta property='og:site_name' content='Runtime Edge' />
+        <meta property='og:site_name' content='Edge Runtime' />
       </>
     )
   },

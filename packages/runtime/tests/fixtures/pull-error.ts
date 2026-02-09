@@ -1,9 +1,9 @@
-import { RuntimeEdge, runServer } from '../../src'
+import { EdgeRuntime, runServer } from '../../src'
 import assert from 'assert'
 import fetch from 'node-fetch'
 
 async function main() {
-  const runtime = new RuntimeEdge()
+  const runtime = new EdgeRuntime()
   const deferred = new Promise<PromiseRejectionEvent>((resolve) => {
     runtime.context.handleRejection = (event: PromiseRejectionEvent) => {
       resolve(event)

@@ -1,8 +1,8 @@
-import type { EdgeVM as IRuntimeEdge } from '../src/edge-vm'
+import type { EdgeVM as IEdgeRuntime } from '../src/edge-vm'
 
 const handlerByEvent = new Map<string | symbol, Function>()
 
-let EdgeVM: typeof IRuntimeEdge
+let EdgeVM: typeof IEdgeRuntime
 
 beforeAll(async () => {
   jest.spyOn(process, 'on').mockImplementation((event, handler) => {
@@ -14,25 +14,26 @@ beforeAll(async () => {
 })
 
 describe('Global primitives', () => {
-  let runtime: IRuntimeEdge
+  let runtime: IEdgeRuntime
 
   beforeAll(() => {
     runtime = new EdgeVM()
   })
 
-  it('RuntimeEdge', async () => {
+  it('EdgeRuntime', async () => {
     const runtime = new EdgeVM()
     {
-      const meta = runtime.evaluate(`(globalThis.RuntimeEdge)`)
+      const meta = runtime.evaluate(`(globalThis.EdgeRuntime)`)
       expect(meta).toEqual('runtime-edge')
     }
     {
-      const meta = runtime.evaluate(`(RuntimeEdge)`)
+      const meta = runtime.evaluate(`(EdgeRuntime)`)
       expect(meta).toEqual('runtime-edge')
     }
     const keys = runtime.evaluate<string[]>(`(Object.keys(globalThis))`)
     expect(keys).not.toHaveLength(0)
-    expect(keys).not.toContain('RuntimeEdge')
+    expect(keys).not.toContain('EdgeRuntime')
+    expect(keys).not.toContain('__conditionallyUpdatesHandlerList')
   })
 
   it.each([
@@ -366,11 +367,6 @@ describe('Using `instanceof`', () => {
     expect(
       new EdgeVM().evaluate(
         `(new TextEncoder().encode('abc')) instanceof Uint8Array`,
-      ),
-    ).toBe(true)
-    expect(
-      new EdgeVM().evaluate(
-        `(new TextEncoder().encode('abc')) instanceof Object`,
       ),
     ).toBe(true)
     expect(

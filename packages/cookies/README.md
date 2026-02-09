@@ -4,8 +4,8 @@
   <img src="https://user-images.githubusercontent.com/2096101/235127419-ac6fe609-d0cd-4339-a593-c48305a83823.png#gh-light-mode-only">
   <br>
   <br>
-  <p align="center"><strong>@runtime-edge/cookies</strong>: An Runtime Edge compatible cookie helpers.</p>
-  <p align="center">See <a href="https://runtime-edge.vercel.app/packages/jest-environment" target='_blank' rel='noopener noreferrer'>@runtime-edge/cookies</a> section in our <a href="https://runtime-edge.vercel.app/" target='_blank' rel='noopener noreferrer'>website</a> for more information.</p>
+  <p align="center"><strong>@runtime-edge/cookies</strong>: An Edge Runtime compatible cookie helpers.</p>
+  <p align="center">See <a href="https://runtime-edge.vercel.app/packages/cookies" target='_blank' rel='noopener noreferrer'>@runtime-edge/cookies</a> section in our <a href="https://runtime-edge.vercel.app/" target='_blank' rel='noopener noreferrer'>website</a> for more information.</p>
   <br>
 </div>
 
@@ -34,4 +34,4 @@ pnpm install @runtime-edge/cookies --save
 **@runtime-edge/cookies** © [Vercel](https://vercel.com), released under the [MPLv2](https://github.com/khulnasoft/runtime-edge/blob/main/LICENSE.md) License.<br>
 Authored and maintained by [Vercel](https://vercel.com) with help from [contributors](https://github.com/khulnasoft/runtime-edge/contributors).
 
-> [vercel.com](https://vercel.com) · GitHub [Vercel](https://github.com/vercel) · Twitter [@vercel](https://twitter.com/vercel)
+> [vercel.com](https://vercel.com) · GitHub [Vercel](https://github.com/vercel) · Twitter [@vercel](https://twitter.com/khulnasoft)

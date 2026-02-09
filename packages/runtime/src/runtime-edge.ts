@@ -1,1 +1,1 @@
-export { EdgeVM as RuntimeEdge } from '@runtime-edge/vm'
+export { EdgeVM as EdgeRuntime } from '@runtime-edge/vm'

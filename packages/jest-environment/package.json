@@ -1,8 +1,8 @@
 {
   "name": "@runtime-edge/jest-environment",
-  "description": "A Jest integration to run assertions in Runtime Edge context.",
+  "description": "A Jest integration to run assertions in Edge Runtime context.",
   "homepage": "https://runtime-edge.vercel.app/packages/jest-environment",
-  "version": "2.3.10",
+  "version": "4.0.0",
   "main": "dist/index.js",
   "repository": {
     "directory": "packages/jest-environment",
@@ -27,10 +27,10 @@
     "@jest/environment": "29.5.0",
     "@jest/fake-timers": "29.5.0",
     "jest-mock": "29.5.0",
-    "jest-util": "29.7.0"
+    "jest-util": "29.5.0"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   },
   "files": [
     "dist"
@@ -43,7 +43,7 @@
     "prebuild": "pnpm run clean:build",
     "test": "jest"
   },
-  "license": "MPL-2.0",
+  "license": "MIT",
   "publishConfig": {
     "access": "public"
   },

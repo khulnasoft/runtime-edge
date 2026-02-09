@@ -1,5 +1,5 @@
-const shouldExist = Boolean(process.env.RUNTIME_EDGE_EXISTS)
+const shouldExist = Boolean(process.env.EDGE_RUNTIME_EXISTS)
 
-test(`RuntimeEdge is ${shouldExist ? 'not defined' : 'defined'}`, () => {
-  expect(typeof RuntimeEdge).toBe(shouldExist ? 'string' : 'undefined')
+test(`EdgeRuntime is ${shouldExist ? 'not defined' : 'defined'}`, () => {
+  expect(typeof EdgeRuntime).toBe(shouldExist ? 'string' : 'undefined')
 })

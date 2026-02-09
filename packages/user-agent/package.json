@@ -1,8 +1,8 @@
 {
   "name": "@runtime-edge/user-agent",
-  "description": "An Runtime Edge compatible user-agent parsing utility",
+  "description": "An Edge Runtime compatible user-agent parsing utility",
   "homepage": "https://runtime-edge.vercel.app/packages/user-agent",
-  "version": "1.4.1",
+  "version": "4.0.0",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "repository": {
@@ -28,10 +28,10 @@
     "@runtime-edge/jest-environment": "workspace:*",
     "@types/ua-parser-js": "0.7.39",
     "tsup": "8",
-    "ua-parser-js": "1.0.37"
+    "ua-parser-js": "1.0.39"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   },
   "files": [
     "dist"
@@ -43,7 +43,7 @@
     "prebuild": "pnpm run clean:build",
     "test": "jest"
   },
-  "license": "MPL-2.0",
+  "license": "MIT",
   "publishConfig": {
     "access": "public"
   },

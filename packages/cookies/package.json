@@ -1,8 +1,8 @@
 {
   "name": "@runtime-edge/cookies",
-  "description": "Cookie helpers compatible with Runtime Edge",
+  "description": "Cookie helpers compatible with Edge Runtime",
   "homepage": "https://runtime-edge.vercel.app/packages/cookies",
-  "version": "4.1.1",
+  "version": "4.0.0",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "repository": {
@@ -31,7 +31,7 @@
     "tsup": "8"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   },
   "files": [
     "dist"
@@ -43,7 +43,7 @@
     "prebuild": "pnpm run clean:build",
     "test": "jest"
   },
-  "license": "MPL-2.0",
+  "license": "MIT",
   "publishConfig": {
     "access": "public"
   },

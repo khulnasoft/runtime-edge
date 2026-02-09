@@ -1,5 +1,5 @@
 module.exports =
-  typeof RuntimeEdge === 'string' ? edge() : require('@runtime-edge/primitives')
+  typeof EdgeRuntime === 'string' ? edge() : require('@runtime-edge/primitives')
 
 function edge() {
   return {

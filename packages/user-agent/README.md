@@ -4,7 +4,7 @@
   <img src="https://user-images.githubusercontent.com/2096101/235127419-ac6fe609-d0cd-4339-a593-c48305a83823.png#gh-light-mode-only">
   <br>
   <br>
-  <p align="center"><strong>@runtime-edge/user-agent</strong>: An Runtime Edge compatible user-agent parsing utility.</p>
+  <p align="center"><strong>@runtime-edge/user-agent</strong>: An Edge Runtime compatible user-agent parsing utility.</p>
   <p align="center">See <a href="https://runtime-edge.vercel.app/packages/user-agent" target='_blank' rel='noopener noreferrer'>@runtime-edge/user-agent</a> section in our <a href="https://runtime-edge.vercel.app/" target='_blank' rel='noopener noreferrer'>website</a> for more information.</p>
   <br>
 </div>
@@ -34,4 +34,4 @@ pnpm install @runtime-edge/user-agent --save
 **@runtime-edge/user-agent** © [Vercel](https://vercel.com), released under the [MPLv2](https://github.com/khulnasoft/runtime-edge/blob/main/LICENSE.md) License.<br>
 Authored and maintained by [Vercel](https://vercel.com) with help from [contributors](https://github.com/khulnasoft/runtime-edge/contributors).
 
-> [vercel.com](https://vercel.com) · GitHub [Vercel](https://github.com/vercel) · Twitter [@vercel](https://twitter.com/vercel)
+> [vercel.com](https://vercel.com) · GitHub [Vercel](https://github.com/vercel) · Twitter [@vercel](https://twitter.com/khulnasoft)

@@ -3,10 +3,11 @@ import type { EdgeContext } from '@runtime-edge/vm'
 import listen from 'async-listen'
 import http from 'http'
 import type { ListenOptions } from 'net'
+import { promisify } from 'util'
 
 interface ServerOptions<T extends EdgeContext> extends Options<T> {}
 
-export interface RuntimeEdgeServer {
+export interface EdgeRuntimeServer {
   /**
    * The server URL.
    */
@@ -28,23 +29,15 @@ export interface RuntimeEdgeServer {
  */
 export async function runServer<T extends EdgeContext>(
   options: ListenOptions & ServerOptions<T>,
-): Promise<RuntimeEdgeServer> {
+): Promise<EdgeRuntimeServer> {
   if (options.port === undefined) options.port = 0
   const { handler, waitUntil } = createHandler(options)
   const server = http.createServer(handler)
   const url = await listen(server, options)
-
+  const closeServer = promisify(server.close.bind(server))
   return {
     url: String(url),
-    close: async () => {
-      await waitUntil()
-      await new Promise<void>((resolve, reject) => {
-        return server.close((err) => {
-          if (err) reject(err)
-          resolve()
-        })
-      })
-    },
+    close: () => Promise.all([waitUntil(), closeServer()]).then(() => void 0),
     waitUntil,
   }
 }

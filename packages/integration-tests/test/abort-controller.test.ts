@@ -2,11 +2,8 @@ if (!globalThis.DOMException) {
   globalThis.DOMException = require('@runtime-edge/ponyfill').DOMException
 }
 
-const testOrSkip =
-  process.versions.node.split('.').map(Number)[0] > 16 ? test : test.skip
-
 describe('AbortController', () => {
-  testOrSkip('allows to abort fetch', async () => {
+  it('allows to abort fetch', async () => {
     expect.assertions(1)
     const controller = new AbortController()
     controller.abort()
@@ -145,7 +142,7 @@ function runAbortedProcess({ signal }: { signal: AbortSignal }) {
 }
 
 function expectSignalToBeEqual(signal: any, reason: any) {
-  if (globalThis.RuntimeEdge !== undefined) {
+  if (globalThis.EdgeRuntime !== undefined) {
     expect(signal.reason).toEqual(reason)
   } else {
     expect(signal.reason.message).toEqual(reason.message)

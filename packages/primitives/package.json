@@ -1,8 +1,8 @@
 {
   "name": "@runtime-edge/primitives",
-  "description": "A set of primitives to build Vercel Runtime Edge.",
+  "description": "A set of primitives to build Vercel Edge Runtime.",
   "homepage": "https://runtime-edge.vercel.app/packages/primitives",
-  "version": "4.1.0",
+  "version": "4.0.0",
   "main": "dist/index.js",
   "repository": {
     "directory": "packages/primitives",
@@ -24,16 +24,14 @@
   ],
   "devDependencies": {
     "@runtime-edge/format": "workspace:*",
-    "@ungap/structured-clone": "1.2.0",
-    "blob-polyfill": "7.0.20220408",
-    "esbuild-plugin-alias": "latest",
+    "esbuild": "0.24.0",
     "event-target-shim": "6.0.2",
     "tsup": "8",
-    "undici": "5.28.4",
+    "undici": "6.21.0",
     "urlpattern-polyfill": "10.0.0"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   },
   "files": [
     "dist",
@@ -42,11 +40,11 @@
   ],
   "scripts": {
     "build": "ts-node scripts/build.ts",
-    "clean:build": "rm -rf dist abort-controller blob console crypto events fetch streams structured-clone url",
+    "clean:build": "rm -rf dist",
     "clean:node": "rm -rf node_modules",
     "prebuild": "pnpm run clean:build"
   },
-  "license": "MPL-2.0",
+  "license": "MIT",
   "publishConfig": {
     "access": "public"
   },

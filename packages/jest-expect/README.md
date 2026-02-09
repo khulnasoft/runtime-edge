@@ -34,4 +34,4 @@ pnpm install @runtime-edge/jest-expect --save
 **@runtime-edge/expect** © [Vercel](https://vercel.com), released under the [MPLv2](https://github.com/khulnasoft/runtime-edge/blob/main/LICENSE.md) License.<br>
 Authored and maintained by [Vercel](https://vercel.com) with help from [contributors](https://github.com/khulnasoft/runtime-edge/contributors).
 
-> [vercel.com](https://vercel.com) · GitHub [Vercel](https://github.com/vercel) · Twitter [@vercel](https://twitter.com/vercel)
+> [vercel.com](https://vercel.com) · GitHub [Vercel](https://github.com/vercel) · Twitter [@vercel](https://twitter.com/khulnasoft)

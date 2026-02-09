@@ -26,7 +26,7 @@ export class VM<T extends Record<string | number, any>> {
     const context = createContext(
       {},
       {
-        name: 'Runtime Edge',
+        name: 'Edge Runtime',
         codeGeneration: options.codeGeneration ?? {
           strings: false,
           wasm: true,

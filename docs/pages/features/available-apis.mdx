@@ -1,11 +1,11 @@
 ---
-title: Runtime Edge APIs
-description: A complete list of all APIs available in the Runtime Edge.
+title: Edge Runtime APIs
+description: A complete list of all APIs available in the Edge Runtime.
 ---
 
-# Runtime Edge APIs
+# Edge Runtime APIs
 
-The following APIs are available in the Runtime Edge.
+The following APIs are available in the Edge Runtime.
 
 ## Network APIs
 
@@ -119,17 +119,17 @@ The following APIs are available in the Runtime Edge.
 
 ## Addressing the runtime
 
-In addition to the above-mentioned APIs, a `globalThis.RuntimeEdge` property is also available that can be used to address the runtime:
+In addition to the above-mentioned APIs, a `globalThis.EdgeRuntime` property is also available that can be used to address the runtime:
 
 ```ts
-if (typeof RuntimeEdge !== 'string') {
+if (typeof EdgeRuntime !== 'string') {
   // dead-code elimination is enabled for the code inside this block
 }
 ```
 
 ## Unsupported APIs
 
-The Runtime Edge has some restrictions including:
+The Edge Runtime has some restrictions including:
 
 - Native Node.js APIs **are not supported**. For example, you can't read or write to the filesystem
 - `node_modules` _can_ be used, as long as they implement ES Modules and do not use native Node.js APIs

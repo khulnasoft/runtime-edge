@@ -16,7 +16,7 @@ export interface EdgeVMOptions<T extends EdgeContext> {
    */
   extend?: (context: EdgeContext) => EdgeContext & T
   /**
-   * Code to be evaluated as when the Runtime Edge is created. This is handy
+   * Code to be evaluated as when the Edge Runtime is created. This is handy
    * to run code directly instead of first creating the runtime and then
    * evaluating.
    */
@@ -188,13 +188,18 @@ function getDefineEventListenersCode() {
       writable: true,
     })
 
-    function __conditionallyUpdatesHandlerList(eventType) {
-      if (eventType === 'unhandledrejection') {
-        self.__onUnhandledRejectionHandlers = self.__listeners[eventType];
-      } else if (eventType === 'error') {
-        self.__onErrorHandlers = self.__listeners[eventType];
-      }
-    }
+    Object.defineProperty(self, '__conditionallyUpdatesHandlerList', {
+      configurable: false,
+      enumerable: false,
+      value: function(eventType) {
+        if (eventType === 'unhandledrejection') {
+          self.__onUnhandledRejectionHandlers = self.__listeners[eventType];
+        } else if (eventType === 'error') {
+          self.__onErrorHandlers = self.__listeners[eventType];
+        }
+      },
+      writable: false,
+    })
 
     function addEventListener(type, handler) {
       const eventType = type.toLowerCase();
@@ -204,7 +209,7 @@ function getDefineEventListenersCode() {
 
       self.__listeners[eventType] = self.__listeners[eventType] || [];
       self.__listeners[eventType].push(handler);
-      __conditionallyUpdatesHandlerList(eventType);
+      self.__conditionallyUpdatesHandlerList(eventType);
     }
 
     function removeEventListener(type, handler) {
@@ -218,7 +223,7 @@ function getDefineEventListenersCode() {
           delete self.__listeners[eventType];
         }
       }
-      __conditionallyUpdatesHandlerList(eventType);
+      self.__conditionallyUpdatesHandlerList(eventType);
     }
   `
 }
@@ -245,14 +250,18 @@ function getDispatchFetchCode() {
         })
       }
 
-      response.waitUntil = () => Promise.all(event.awaiting);
-
       if (response.status < 300 || response.status >= 400 ) {
-        response.headers.delete('content-encoding');
-        response.headers.delete('transform-encoding');
-        response.headers.delete('content-length');
+        const headers = new Headers(response.headers);
+        headers.delete('content-encoding');
+        headers.delete('transform-encoding');
+        headers.delete('content-length');
+        response = new Response(response.body, {
+          status: response.status,
+          statusText: response.statusText,
+          headers
+        });
       }
-
+      response.waitUntil = () => Promise.all(event.awaiting);
       return response;
     }
 
@@ -308,7 +317,7 @@ export type EdgeContext = VMContext & {
   URLSearchParams: typeof EdgePrimitives.URLSearchParams
   WritableStream: typeof EdgePrimitives.WritableStream
   WritableStreamDefaultWriter: typeof EdgePrimitives.WritableStreamDefaultWriter
-  RuntimeEdge: string
+  EdgeRuntime: string
 }
 
 function addPrimitives(context: VMContext) {
@@ -318,7 +327,7 @@ function addPrimitives(context: VMContext) {
   defineProperty(context, 'clearInterval', { value: clearInterval })
   defineProperty(context, 'clearTimeout', { value: clearTimeout })
   defineProperty(context, 'queueMicrotask', { value: queueMicrotask })
-  defineProperty(context, 'RuntimeEdge', { value: 'runtime-edge' })
+  defineProperty(context, 'EdgeRuntime', { value: 'runtime-edge' })
 
   const transferables = getTransferablePrimitivesFromContext(context)
 

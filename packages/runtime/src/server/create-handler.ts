@@ -1,4 +1,4 @@
-import type { RuntimeEdge } from '../runtime-edge'
+import type { EdgeRuntime } from '../runtime-edge'
 import type { IncomingMessage, ServerResponse } from 'http'
 import type { Logger, NodeHeaders } from '../types'
 import type { EdgeContext } from '@runtime-edge/vm'
@@ -17,13 +17,13 @@ export interface Options<T extends EdgeContext> {
    * The runtime where the FetchEvent will be triggered whenever the server
    * receives a request.
    */
-  runtime: RuntimeEdge<T>
+  runtime: EdgeRuntime<T>
 }
 
 /**
- * Creates an HHTP handler that can be used to create a Node.js HTTP server.
+ * Creates an HTTP handler that can be used to create a Node.js HTTP server.
  * Whenever a request is handled it will transform it into a `dispatchFetch`
- * call for the given `RuntimeEdge`. Then it will transform the response
+ * call for the given `EdgeRuntime`. Then it will transform the response
  * into an HTTP response.
  */
 export function createHandler<T extends EdgeContext>(options: Options<T>) {
@@ -106,7 +106,7 @@ function getURL(req: IncomingMessage) {
 function toRequestInitHeaders(req: IncomingMessage): RequestInit['headers'] {
   return Object.keys(req.headers).map((key) => {
     const value = req.headers[key]
-    return [key, Array.isArray(value) ? value.join(', ') : value ?? '']
+    return [key, Array.isArray(value) ? value.join(', ') : (value ?? '')]
   })
 }
 
