@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "dependencies": {
     "@heroicons/react": "~2.2.0",
-    "next": "15.2.8",
+    "next": "16.1.7",
     "next-themes": "~0.4.6",
-    "nextra": "2",
+    "nextra": "4",
     "nextra-theme-docs": "2",
     "react": "18",
     "react-dom": "19",
@@ -14,9 +14,9 @@
   "devDependencies": {
     "autoprefixer": "~10.4.21",
     "eslint": "^9",
-    "eslint-config-next": "15.5.6",
+    "eslint-config-next": "16.2.1",
     "postcss": "~8.5.3",
-    "tailwindcss": "3"
+    "tailwindcss": "4"
   },
   "engines": {
     "node": ">=18"
