@@ -34,12 +34,12 @@ In case you need, you can extend the VM context:
 const edgeVM = new EdgeVM({
   extend: (context) => {
     const rawFetch = context.fetch.bind(context.fetch)
-    context.fetch = async (input: RequestInfo | URL, init?: RequestInit) =>
+    context.fetch = async (input, init) =>
       rawFetch(
         typeof input === 'string' && !input.startsWith('https://')
           ? `https://${input}`
-          : String(input),
-        init
+          : input,
+        init,
       )
 
     return context
@@ -86,7 +86,7 @@ Provides an initial map to the require cache, if none is given, it will be initi
 
 #### methods
 
-##### evaluate: (code: string): () => Promise\<any>
+##### evaluate: (code: string) => Promise\<any>
 
 Allows you to run arbitrary code within the VM.
 

@@ -83,8 +83,11 @@ describe('body', () => {
     const res = new Response(formData)
     const text = await res?.text()
 
-    expect(text.replace(/formdata-undici-0\d+/g, 'formdata-unidici-0.1234'))
-      .toMatchInlineSnapshot(`
+    const normalized = text
+      .replace(/formdata-undici-0\d+/g, 'formdata-unidici-0.1234')
+      .replace(/[\r\n]+$/, '')
+
+    expect(normalized).toMatchInlineSnapshot(`
     "------formdata-unidici-0.1234
     Content-Disposition: form-data; name="name"
 

@@ -8,7 +8,7 @@ on:
       - '!*'
 
 env:
-  NODE_VERSION: '18'
+  NODE_VERSION: '22'
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -36,7 +36,7 @@ jobs:
 
       - run: corepack enable && pnpm --version
 
-      - run: pnpm install --recursive --no-frozen-lockfile --loglevel=error
+      - run: pnpm install --recursive --loglevel=error
 
       - run: pnpm build
 

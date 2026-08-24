@@ -2,10 +2,10 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/2096101/235130063-e561514e-1f66-4ff6-9034-70dbf7ca3260.png">
     <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/2096101/235127419-ac6fe609-d0cd-4339-a593-c48305a83823.png">
-    <img alt="Edge Runtime" src="https://user-images.githubusercontent.com/2096101/235127419-ac6fe609-d0cd-4339-a593-c48305a83823.png" width="400">
+    <img alt="Runtime Edge" src="https://user-images.githubusercontent.com/2096101/235127419-ac6fe609-d0cd-4339-a593-c48305a83823.png" width="400">
   </picture>
   <br>
-  <sub>⚡️ Edge Runtime - Modern Runtime Infrastructure for the Web Platform ⚡️</sub>
+  <sub>⚡️ Runtime Edge - Modern Runtime Infrastructure for the Web Platform ⚡️</sub>
 </h1>
 
 <p align="center">
@@ -39,7 +39,7 @@
 
 ### 🚀 Overview
 
-**Edge Runtime** is a **high-performance**, **standards-compliant** runtime environment for modern web applications. Built by [KhulnaSoft](https://khulnasoft.com), it provides a complete implementation of Web APIs that run seamlessly across edge networks, serverless platforms, and traditional server environments.
+**Runtime Edge** is a **high-performance**, **standards-compliant** runtime environment for modern web applications. Built by [KhulnaSoft](https://khulnasoft.com), it provides a complete implementation of Web APIs that run seamlessly across edge networks, serverless platforms, and traditional server environments.
 
 The runtime enables developers to write once and deploy anywhere, with full compatibility for:
 
@@ -68,7 +68,7 @@ The runtime enables developers to write once and deploy anywhere, with full comp
 ### 🧰 Quick Start
 
 ```bash
-# Install the Edge Runtime CLI globally
+# Install the Runtime Edge CLI globally
 npm install -g runtime-edge
 
 # Or add to your project
@@ -79,7 +79,7 @@ runtime-edge dev                    # Start development server
 runtime-edge build                  # Build for production
 
 # Testing
-runtime-edge test                   # Run tests in Edge Runtime
+runtime-edge test                   # Run tests in Runtime Edge
 ```
 
 **Basic Usage:**
@@ -106,10 +106,10 @@ console.log(result)
 import { createServer } from 'runtime-edge'
 
 const server = createServer({
-  // Your Edge Runtime configuration
+  // Your Runtime Edge configuration
   port: 3000,
   handler: async (request) => {
-    return new Response('Hello from Edge Runtime!')
+    return new Response('Hello from Runtime Edge!')
   },
 })
 
@@ -127,9 +127,9 @@ server.start()
 | [`@runtime-edge/vm`](https://npmjs.com/package/@runtime-edge/vm)                             | `v4.0.0` | Secure VM for code execution in Web Standard contexts  |
 | [`@runtime-edge/format`](https://npmjs.com/package/@runtime-edge/format)                     | `v4.0.0` | printf-style string formatting utilities               |
 | [`@runtime-edge/cookies`](https://npmjs.com/package/@runtime-edge/cookies)                   | `v4.0.0` | Standards-compliant cookie management                  |
-| [`@runtime-edge/user-agent`](https://npmjs.com/package/@runtime-edge/user-agent)             | `v4.0.0` | User agent parsing for Edge Runtime                    |
-| [`@runtime-edge/jest-environment`](https://npmjs.com/package/@runtime-edge/jest-environment) | `v4.0.0` | Jest testing environment for Edge Runtime              |
-| [`@runtime-edge/jest-expect`](https://npmjs.com/package/@runtime-edge/jest-expect)           | `v4.0.0` | Custom Jest matchers for Edge Runtime testing          |
+| [`@runtime-edge/user-agent`](https://npmjs.com/package/@runtime-edge/user-agent)             | `v4.0.0` | User agent parsing for Runtime Edge                    |
+| [`@runtime-edge/jest-environment`](https://npmjs.com/package/@runtime-edge/jest-environment) | `v4.0.0` | Jest testing environment for Runtime Edge              |
+| [`@runtime-edge/jest-expect`](https://npmjs.com/package/@runtime-edge/jest-expect)           | `v4.0.0` | Custom Jest matchers for Runtime Edge testing          |
 | [`@runtime-edge/ponyfill`](https://npmjs.com/package/@runtime-edge/ponyfill)                 | `v4.0.0` | Polyfills and compatibility layers                     |
 | [`@runtime-edge/types`](https://npmjs.com/package/@runtime-edge/types)                       | `v4.0.0` | TypeScript type definitions                            |
 
@@ -137,7 +137,7 @@ server.start()
 
 ### 🏗️ Architecture
 
-Edge Runtime is built as a modular monorepo with the following structure:
+Runtime Edge is built as a modular monorepo with the following structure:
 
 ```
 packages/
@@ -188,7 +188,7 @@ Thanks to all our amazing contributors! 💜 <a href="https://github.com/khulnas
 
 ### 📄 License
 
-**Edge Runtime** © [KhulnaSoft](https://khulnasoft.com) — released under the [MIT License](https://github.com/khulnasoft/runtime-edge/blob/main/LICENSE.md).
+**Runtime Edge** © [KhulnaSoft](https://khulnasoft.com) — released under the [MIT License](https://github.com/khulnasoft/runtime-edge/blob/main/LICENSE.md).
 Authored and maintained by [KhulnaSoft](https://khulnasoft.com) with help from our [community contributors](https://github.com/khulnasoft/runtime-edge/contributors).
 
 ---

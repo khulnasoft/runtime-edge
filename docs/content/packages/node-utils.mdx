@@ -1,4 +1,4 @@
-import { Callout } from 'nextra-theme-docs'
+import { Callout } from 'nextra/components'
 
 # Edge Runtime Node Utils
 
@@ -77,9 +77,7 @@ When running in Node.js 18+ (or Node.js 16 with [--experimental-fetch](https://n
 ```js
 import { buildToNodeHandler } from '@runtime-edge/node-utils'
 
-buildToNodeHandler(globals, {
-  /* ... options */
-})
+buildToNodeHandler(global, {/* ... options */})
 ```
 
 Otherwise, you can reuse primitives from [@runtime-edge/primitives](/packages/primitives)
@@ -88,9 +86,7 @@ Otherwise, you can reuse primitives from [@runtime-edge/primitives](/packages/pr
 import { buildToNodeHandler } from '@runtime-edge/node-utils'
 import * as primitives from '@runtime-edge/primitives'
 
-buildToNodeHandler(primitives, {
-  /* ... options */
-})
+buildToNodeHandler(primitives, {/* ... options */})
 ```
 
 #### options: object

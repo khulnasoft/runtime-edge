@@ -34,12 +34,12 @@ import { EdgeRuntime } from 'runtime-edge'
 const runtime = new EdgeRuntime({
   extend: (context) => {
     const rawFetch = context.fetch.bind(context.fetch)
-    context.fetch = async (input: RequestInfo | URL, init?: RequestInit) =>
+    context.fetch = async (input, init) =>
       rawFetch(
         typeof input === 'string' && !input.startsWith('https://')
           ? `https://${input}`
           : String(input),
-        init
+        init,
       )
 
     return context
@@ -78,10 +78,19 @@ import { EdgeRuntime, runServer } from 'runtime-edge'
 import { onExit } from 'signal-exit'
 
 const initialCode = `
+const ALLOWED_ORIGINS = ['https://example.vercel.sh']
 addEventListener('fetch', event => {
   const { searchParams } = new URL(event.request.url)
   const url = searchParams.get('url')
-  return event.respondWith(fetch(url))
+  try {
+    const target = new URL(url)
+    if (!ALLOWED_ORIGINS.includes(target.origin)) {
+      return event.respondWith(new Response('Forbidden', { status: 403 }))
+    }
+    return event.respondWith(fetch(target.toString()))
+  } catch {
+    return event.respondWith(new Response('Invalid URL', { status: 400 }))
+  }
 })`
 
 const edgeRuntime = new EdgeRuntime({ initialCode })

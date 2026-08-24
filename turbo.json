@@ -18,7 +18,8 @@
     "test": {
       "cache": false,
       "dependsOn": ["build"],
-      "outputs": []
+      "outputs": [],
+      "env": ["COVERAGE"]
     }
   }
 }

@@ -28,7 +28,7 @@
     "ts-jest": "29.2.5",
     "ts-node": "10.9.2",
     "turbo": "latest",
-    "typescript": "latest"
+    "typescript": "5.9.3"
   },
   "engines": {
     "node": ">=18"
@@ -39,11 +39,11 @@
     "clean:build": "pnpm -r run clean:build",
     "clean:node": "pnpm -r run clean:node",
     "contributors": "git-authors-cli && finepack",
-    "coverage": "c8 report",
+    "coverage": "COVERAGE=1 turbo run test",
     "lockfile": "pnpm install --lockfile && git add pnpm-lock.yaml && git commit -m \"build: regenerate lock\"",
     "postinstall": "./node_modules/.bin/simple-git-hooks",
     "prebuild": "pnpm -r run clean:build",
-    "test": "c8 turbo run test",
+    "test": "turbo run test",
     "update": "pnpm -r exec ncu -- --upgrade && ncu -- --upgrade",
     "update:check": "pnpm -r exec ncu -- --errorLevel 2 && ncu -- --errorLevel 2",
     "version:prepare": "changeset version && pnpm install --no-frozen-lockfile",
